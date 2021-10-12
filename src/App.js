@@ -6,7 +6,7 @@ const alert = () => {
 function App() {
   return (
     <>
-      <TodoList />
+      <TodoList /> <TodoList /> <TodoList />
       <input type="text" />
       <button>create</button>
       <button onClick={alert}>clear complete</button>
