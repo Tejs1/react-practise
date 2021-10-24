@@ -1,11 +1,11 @@
 import React from "react";
-import comments from "./comments";
+import comments from "./Comments";
 
 export default function TodoList() {
   return (
     <div>
       <h1>this id 1st tweet</h1>
-      <button onClick={comments}>like</button>
+      <button onClick={}>like</button>
       {/* {[comments]} */}
       <comments />
     </div>
