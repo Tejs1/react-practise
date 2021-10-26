@@ -1,4 +1,4 @@
-import react from "react";
+import react, { useEffect } from "react";
 import Tweet from "./Tweet";
 // import Tweet from "./components/Tweet.js";
 

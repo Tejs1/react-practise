@@ -1,6 +1,10 @@
-import react from "react";
+import react, { useEffect } from "react";
 
 const Tweet = ({ name, tweet, setTweets, tweets }) => {
+  useEffect(() => {
+    // effect
+    console.log(tweet);
+  }, [tweet]);
   const deleteTweet = () => {
     setTweets(tweets.filter((state) => state.id != tweet.id));
   };
