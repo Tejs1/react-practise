@@ -5,7 +5,6 @@ import Tweet from "./Tweet";
 const TweetList = ({ name, tweets, setTweets }) => {
   return (
     <div className="tweet-list">
-      <h1>hello</h1>
       {tweets.map((tweet) => (
         <Tweet
           name={name}
@@ -15,6 +14,16 @@ const TweetList = ({ name, tweets, setTweets }) => {
           key={tweet.id}
         />
       ))}
+      {/*  foreach doesnt work */}
+      {/* {tweets.forEach((tweet) => (
+        <Tweet
+          name={name}
+          tweet={tweet}
+          tweets={tweets}
+          setTweets={setTweets}
+          key={tweet.id}
+        />
+      ))} */}
     </div>
   );
 };
