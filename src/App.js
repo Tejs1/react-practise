@@ -1,30 +1,16 @@
-// import userEvent from "@testing-library/user-event";
-import React, { useState } from "react";
-// import Tweet from "./components/Tweet";
-import TweetList from "./components/TweetList";
-import CreateTweet from "./components/CreateTweet";
-// import TestComponent from "./TestComponent";
-// import TodoList from "./TodoList";
-// const alert = () => {
-//   alert("hi there");
-// };
+import { Cart } from "./Cart";
+import { ProductListing } from "./ProductListing";
 
 function App() {
-  const [textInput, setTextInput] = useState("");
-  const [tweets, setTweets] = useState([]);
-  const name = "tejs";
-
   return (
     <>
-      <CreateTweet
-        textInput={textInput}
-        setTextInput={setTextInput}
-        setTweets={setTweets}
-        tweets={tweets}
-      />
-      <TweetList name={name} tweets={tweets} setTweets={setTweets} />
+      <h1 className="app-header">eCommerce</h1>
+      <div className="app-body">
+        <Cart />
+        <ProductListing />
+      </div>
     </>
   );
 }
 
-export default App;
+export { App };
