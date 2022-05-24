@@ -1,5 +1,5 @@
-import { useCart } from "./cart-context";
-import { useTheme } from "./theme-context";
+import { useCart } from "../Context/cart-context";
+import { useTheme } from "../Context/theme-context";
 export function ProductListing() {
   const { addToCart } = useCart();
   const { theme } = useTheme();

@@ -1,12 +1,13 @@
-import { Cart } from "./Cart";
-import { ProductListing } from "./ProductListing";
-import { useTheme } from "./theme-context";
+import { Cart } from "./Components/Cart";
+import { Nav } from "./Components/Nav";
+import { ProductListing } from "./Components/ProductListing";
+import { useTheme } from "./Context/theme-context";
 function App() {
   const { theme } = useTheme();
   return (
     <div className={`app ${theme}`}>
-      <h1 className="app-header">eCommerce</h1>
       <div className="app-body">
+        <Nav />
         <Cart />
         <ProductListing />
       </div>
