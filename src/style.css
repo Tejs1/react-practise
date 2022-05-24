@@ -15,3 +15,9 @@ button {
   border: solid 2px red;
   padding: 0.5rem;
 }
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
