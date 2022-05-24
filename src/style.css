@@ -1,0 +1,17 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+.dark {
+  color: aliceblue;
+  background-color: rgb(6, 54, 54);
+}
+.white {
+  color: black;
+  background-color: aliceblue;
+}
+button {
+  border: solid 2px red;
+  padding: 0.5rem;
+}

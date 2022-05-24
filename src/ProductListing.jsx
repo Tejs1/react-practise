@@ -1,13 +1,16 @@
 import { useCart } from "./cart-context";
+import { useTheme } from "./theme-context";
 export function ProductListing() {
-  const { setItems } = useCart();
-  function clickHandler() {
-    setItems((items) => items + 1);
-  }
+  const { addToCart } = useCart();
+  const { theme } = useTheme();
+  console.log(theme);
+
   return ["1", "2", "3", "4"].map((item) => (
-    <div>
-      <h2 key={item}>Product {item}</h2>
-      <button onClick={clickHandler}>Add to cart</button>
+    <div key={item}>
+      <h2>Product {item}</h2>
+      <button className={theme} onClick={addToCart}>
+        Add to cart
+      </button>
     </div>
   ));
 }
