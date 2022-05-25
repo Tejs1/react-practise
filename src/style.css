@@ -24,3 +24,10 @@ nav {
 body {
   font-size: 1rem;
 }
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  max-width: 1000px;
+}

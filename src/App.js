@@ -7,9 +7,17 @@ function App() {
   return (
     <div className={`app ${theme}`}>
       <div className="app-body">
-        <Nav />
-        <Cart />
-        <ProductListing />
+        <nav>
+          <Nav />
+        </nav>
+        <main>
+          <section>
+            <ProductListing />
+          </section>
+          <section>
+            <Cart />
+          </section>
+        </main>
       </div>
     </div>
   );

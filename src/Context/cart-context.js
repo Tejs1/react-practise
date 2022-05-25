@@ -6,13 +6,15 @@ const defaultProvoderValue = {
 };
 const CartContext = createContext(defaultProvoderValue);
 const CartProvider = ({ children }) => {
-  const [items, setItems] = useState(5);
-  function addToCart() {
-    setItems((items) => items + 1);
+  const [cartItems, setCartItems] = useState(["1", "2"]);
+
+  function addToCart(item) {
+    console.log(item);
+    setCartItems((cartItems) => [...cartItems, item]);
   }
   return (
     <>
-      <CartContext.Provider value={{ items, addToCart }}>
+      <CartContext.Provider value={{ addToCart, cartItems }}>
         {children}
       </CartContext.Provider>
     </>
