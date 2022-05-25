@@ -21,3 +21,6 @@ nav {
   justify-content: space-between;
   align-items: flex-start;
 }
+body {
+  font-size: 1rem;
+}
