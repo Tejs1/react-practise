@@ -8,7 +8,7 @@ export function Cart() {
   const { theme } = useTheme();
 
   return (
-    <div>
+    <section>
       <h1>
         {Localisation[lang]["items"]} {items}
       </h1>
@@ -22,6 +22,6 @@ export function Cart() {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 }

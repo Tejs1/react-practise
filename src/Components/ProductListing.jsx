@@ -7,11 +7,11 @@ export function ProductListing() {
   const { lang, Localisation } = useLocal();
 
   return ["1", "2", "3", "4"].map((item) => (
-    <div key={item}>
+    <section key={item}>
       <h2>Product {item}</h2>
       <button className={theme} onClick={() => addToCart(item)}>
         {Localisation[lang]["addToCart"]}
       </button>
-    </div>
+    </section>
   ));
 }

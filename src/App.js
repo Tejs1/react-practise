@@ -1,5 +1,8 @@
+import { Route, Routes } from "react-router-dom";
 import { Cart } from "./Components/Cart";
 import { Nav } from "./Components/Nav";
+import { Wishlist } from "./Components/Whishlist";
+import { Auth } from "./Components/Auth";
 import { ProductListing } from "./Components/ProductListing";
 import { useTheme } from "./Context/theme-context";
 function App() {
@@ -7,16 +10,16 @@ function App() {
   return (
     <div className={`app ${theme}`}>
       <div className="app-body">
-        <nav>
-          <Nav />
-        </nav>
+        <Nav />
         <main>
-          <section>
-            <ProductListing />
-          </section>
-          <section>
-            <Cart />
-          </section>
+          <Routes>
+            <Route path="/" element={<ProductListing />} />
+            <Route path="cart" element={<Cart />} />
+            <Route path="whishlist" element={<Wishlist />} />
+            <Route path="auth" element={<Auth />} />
+          </Routes>
+          {/* <ProductListing />
+          <Cart /> */}
         </main>
       </div>
     </div>
