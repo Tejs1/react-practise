@@ -4,6 +4,7 @@ import { Nav } from "./Components/Nav";
 import { Wishlist } from "./Components/Whishlist";
 import { Auth } from "./Components/Auth";
 import { ProductListing } from "./Components/ProductListing";
+import { Product } from "./Components/Product";
 import { useTheme } from "./Context/theme-context";
 function App() {
   const { theme } = useTheme();
@@ -17,6 +18,7 @@ function App() {
             <Route path="cart" element={<Cart />} />
             <Route path="whishlist" element={<Wishlist />} />
             <Route path="auth" element={<Auth />} />
+            <Route path="product/:id" element={<Product />} />
           </Routes>
           {/* <ProductListing />
           <Cart /> */}

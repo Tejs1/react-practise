@@ -5,7 +5,6 @@ import { useTheme } from "../Context/theme-context";
 import { data } from "../data/data";
 export function ProductListing() {
   const list = data.data;
-  console.log(list);
 
   const { addToCart } = useCart();
   const { theme } = useTheme();
