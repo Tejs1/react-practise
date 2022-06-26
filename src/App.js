@@ -19,9 +19,15 @@ function App() {
             <Route path="whishlist" element={<Wishlist />} />
             <Route path="auth" element={<Auth />} />
             <Route path="product/:id" element={<Product />} />
+            <Route
+              path="*"
+              element={
+                <main style={{ padding: "1rem" }}>
+                  <p>There's nothing here!</p>
+                </main>
+              }
+            />
           </Routes>
-          {/* <ProductListing />
-          <Cart /> */}
         </main>
       </div>
     </div>
