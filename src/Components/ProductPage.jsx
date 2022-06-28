@@ -8,6 +8,7 @@ function getLink(link) {
 
 export function ProductPage({ product }) {
   const { id, name, description, mass, media } = product;
+  ///tejss
   const { avatar, cover } = media[0].images;
   return (
     <div>

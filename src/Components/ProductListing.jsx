@@ -10,7 +10,7 @@ export function ProductListing() {
   const { theme } = useTheme();
   const { lang, Localisation } = useLocal();
 
-  return list.map(({ id, name, price, description }) => (
+  return list.map(({ id, name, price }) => (
     <section key={id}>
       <h3> {name}</h3>
       <h3>price : {price}</h3>
