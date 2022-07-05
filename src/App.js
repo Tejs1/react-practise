@@ -5,9 +5,11 @@ import { Wishlist } from "./Components/Whishlist";
 import { Auth } from "./Components/Auth";
 import { ProductListing } from "./Components/ProductListing";
 import { Product } from "./Components/Product";
+import { Address } from "./Components/address";
 import { useTheme } from "./Context/theme-context";
 import User from "./Components/User";
 function App() {
+  const login = true;
   const { theme } = useTheme();
   return (
     <div className={`app ${theme}`}>
@@ -21,6 +23,8 @@ function App() {
             <Route path="auth" element={<Auth />} />
             <Route path="user" element={<User />} />
             <Route path="product/:id" element={<Product />} />
+            {!login && <Route path="address" element={<Auth />} />}
+            {login && <Route path="address" element={<Address />} />}
             <Route
               path="*"
               element={

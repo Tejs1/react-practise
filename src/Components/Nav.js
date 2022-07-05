@@ -41,6 +41,12 @@ export function Nav() {
             AUTH
           </NavLink>
         </button>
+        <button>
+          <NavLink to="address" style={getStyle()}>
+            Address
+          </NavLink>
+        </button>
+
         <button className={theme} onClick={changeLang} value="ENG">
           ENG
         </button>

@@ -28,4 +28,4 @@ export function Auth() {
     setPass(e.target.value);
     setError(false);
   }
-}
+} 
