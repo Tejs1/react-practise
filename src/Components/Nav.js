@@ -1,10 +1,13 @@
 import { NavLink } from "react-router-dom";
+import { useLogin } from "../Context/auth-context";
 import { useLocal } from "../Context/localisation-context";
 import { useTheme } from "../Context/theme-context";
 
-export function Nav() {
+export function Nav({ state }) {
+  const { login, handleLogin } = useLogin();
   const { theme, changeTheme } = useTheme();
   const { changeLang } = useLocal();
+
   function getStyle() {
     const active = {
       fontWeight: "bold",
@@ -46,6 +49,7 @@ export function Nav() {
             Address
           </NavLink>
         </button>
+        <button onClick={handleLogin}>{login ? "Logout" : "Login"}</button>
 
         <button className={theme} onClick={changeLang} value="ENG">
           ENG

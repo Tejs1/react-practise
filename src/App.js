@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import { Cart } from "./Components/Cart";
 import { Nav } from "./Components/Nav";
@@ -7,14 +8,15 @@ import { ProductListing } from "./Components/ProductListing";
 import { Product } from "./Components/Product";
 import { Address } from "./Components/address";
 import { useTheme } from "./Context/theme-context";
+import { useLogin } from "./Context/auth-context";
 import User from "./Components/User";
 function App() {
-  const login = true;
   const { theme } = useTheme();
+  const { login } = useLogin();
   return (
     <div className={`app ${theme}`}>
       <div className="app-body">
-        <Nav />
+        <Nav state={useState(false)} />
         <main>
           <Routes>
             <Route path="/" element={<ProductListing />} />

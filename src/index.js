@@ -6,18 +6,21 @@ import { App } from "./App";
 import { CartProvider } from "./Context/cart-context";
 import { ThemeProvider } from "./Context/theme-context";
 import { LocalProvider } from "./Context/localisation-context";
+import { LoginProvider } from "./Context/auth-context";
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <StrictMode>
     <BrowserRouter>
-      <ThemeProvider>
-        <CartProvider className="dark">
-          <LocalProvider>
-            <App />
-          </LocalProvider>
-        </CartProvider>
-      </ThemeProvider>
+      <LoginProvider>
+        <ThemeProvider>
+          <CartProvider className="dark">
+            <LocalProvider>
+              <App />
+            </LocalProvider>
+          </CartProvider>
+        </ThemeProvider>
+      </LoginProvider>
     </BrowserRouter>
   </StrictMode>,
   rootElement
