@@ -8,11 +8,10 @@ import { ProductListing } from "./Components/ProductListing";
 import { Product } from "./Components/Product";
 import { Address } from "./Components/address";
 import { useTheme } from "./Context/theme-context";
-import { useLogin } from "./Context/auth-context";
 import User from "./Components/User";
+import RequireAuth from "./Components/RequireAuth";
 function App() {
   const { theme } = useTheme();
-  const { login } = useLogin();
   return (
     <div className={`app ${theme}`}>
       <div className="app-body">
@@ -25,8 +24,17 @@ function App() {
             <Route path="auth" element={<Auth />} />
             <Route path="user" element={<User />} />
             <Route path="product/:id" element={<Product />} />
-            {!login && <Route path="address" element={<Auth />} />}
-            {login && <Route path="address" element={<Address />} />}
+            <Route path="login" element={<Auth />} />
+
+            <Route
+              path="address"
+              element={
+                <RequireAuth>
+                  <Address />{" "}
+                </RequireAuth>
+              }
+            />
+
             <Route
               path="*"
               element={
