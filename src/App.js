@@ -20,8 +20,15 @@ function App() {
           <Routes>
             <Route path="/" element={<ProductListing />} />
             <Route path="cart" element={<Cart />} />
-            <Route path="whishlist" element={<Wishlist />} />
-            <Route path="auth" element={<Auth />} />
+            <Route
+              path="whishlist"
+              element={
+                <RequireAuth>
+                  <Wishlist />
+                </RequireAuth>
+              }
+            />
+
             <Route path="user" element={<User />} />
             <Route path="product/:id" element={<Product />} />
             <Route path="login" element={<Auth />} />
@@ -30,7 +37,7 @@ function App() {
               path="address"
               element={
                 <RequireAuth>
-                  <Address />{" "}
+                  <Address />
                 </RequireAuth>
               }
             />
@@ -51,7 +58,3 @@ function App() {
 }
 
 export { App };
-//create login use page
-//add login page user pager to nav routes
-//create input and click handler in loginb page
-//if pass? nav : set err(true)
