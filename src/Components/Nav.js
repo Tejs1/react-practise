@@ -1,10 +1,8 @@
 import { NavLink } from "react-router-dom";
-import { useLogin } from "../Context/auth-context";
 import { useLocal } from "../Context/localisation-context";
 import { useTheme } from "../Context/theme-context";
 
 export function Nav({ state }) {
-  const { login, handleLogin } = useLogin();
   const { theme, changeTheme } = useTheme();
   const { changeLang } = useLocal();
 
@@ -22,7 +20,9 @@ export function Nav({ state }) {
 
   return (
     <nav>
-      <h1 className="app-header">ECommerce </h1>
+      <div>
+        <h1 className="app-header">ECommerce </h1>
+      </div>
       <div>
         <button className={theme}>
           <NavLink to="/" style={getStyle()}>
@@ -40,16 +40,15 @@ export function Nav({ state }) {
           </NavLink>
         </button>
         <button className={theme}>
-          <NavLink to="auth" style={getStyle()}>
-            AUTH
-          </NavLink>
-        </button>
-        <button>
           <NavLink to="address" style={getStyle()}>
             Address
           </NavLink>
         </button>
-        <button onClick={handleLogin}>{login ? "Logout" : "Login"}</button>
+        <button className={theme}>
+          <NavLink to="login" style={getStyle()}>
+            AUTH
+          </NavLink>
+        </button>
 
         <button className={theme} onClick={changeLang} value="ENG">
           ENG
